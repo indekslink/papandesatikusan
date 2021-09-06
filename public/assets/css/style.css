@@ -157,5 +157,5 @@ body {
     fill: #ffff00;
 }
 #pengurus-pkk [node-id] rect {
-    fill: transparent;
+    fill: rgb(238, 238, 248);
 }

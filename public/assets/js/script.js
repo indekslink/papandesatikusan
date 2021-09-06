@@ -1,5 +1,5 @@
 var grafikSlider = document.getElementById("carouselHeroContent");
-const intervalCarousel = 3000;
+const intervalCarousel = 10000;
 var carousel = new bootstrap.Carousel(grafikSlider, {
     interval: intervalCarousel,
     ride: false,

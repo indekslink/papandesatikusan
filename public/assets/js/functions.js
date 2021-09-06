@@ -581,7 +581,7 @@ function orgChartAnimation(el, callback, timeWait) {
                 orgChartBaganStruktur(container, d.nodes); //buat baru
             }
         });
-    }, 100);
+    }, 500);
 
     // console.log(container.contentDocument);
     // squares.forEach((square) => {
@@ -590,7 +590,7 @@ function orgChartAnimation(el, callback, timeWait) {
 
     const header = el.children().children().children()[0];
 
-    // const body = el.children().children()[1];
+    const body = el.children().children()[1];
 
     // beri oncomplete pada data json terakhir
     const complete = {
@@ -605,6 +605,10 @@ function orgChartAnimation(el, callback, timeWait) {
     const element = [
         {
             el: header,
+            animation,
+        },
+        {
+            el: body,
             animation: useComplete,
         },
     ];
@@ -681,7 +685,7 @@ function createHighChart(idElement, data, ...option) {
                     enabled: true,
                 },
                 animation: {
-                    duration: option[1] + 200,
+                    duration: option[1] > 3000 ? option[1] / 2 + 100 : option[1],
                 },
             },
         },
@@ -708,7 +712,7 @@ function orgChartBaganStruktur(element, nodes) {
     let chart = new OrgChart(element, {
         mouseScrool: OrgChart.action.none,
         template: "ana",
-        siblingSeparation: 200,
+        siblingSeparation: 50,
         scaleInitial: OrgChart.match.boundary,
         enableSearch: false,
         nodeBinding: {
